@@ -1,0 +1,37 @@
+﻿@model Logixion.Services.Models.Employee
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+           Full Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)
+        </dd> 
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title):
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Achievements):
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Achievements)
+        </dd>
+
+    </dl>
+</div>
+<p> 
+    @Html.ActionLink("List", "Index")
+</p>

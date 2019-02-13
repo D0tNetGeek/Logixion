@@ -1,0 +1,831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09C125D4-7880-44D2-A861-9BD43CBFBC69}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Logixion.UI.Web</RootNamespace>
+    <AssemblyName>Logixion.UI.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0-alpha1\lib\net451\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0-alpha1\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0-alpha1\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0-alpha1\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0-alpha1\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.4.0.0-beta-0134\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ControllerFactory\CustomControllerFactory.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\UFL.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="HSR-html\css\animate.css" />
+    <Content Include="HSR-html\css\bootstrap-grid.css" />
+    <Content Include="HSR-html\css\bootstrap-grid.min.css" />
+    <Content Include="HSR-html\css\bootstrap-reboot.css" />
+    <Content Include="HSR-html\css\bootstrap-reboot.min.css" />
+    <Content Include="HSR-html\css\bootstrap.css" />
+    <Content Include="HSR-html\css\bootstrap.min.css" />
+    <Content Include="HSR-html\css\font-awesome.css" />
+    <Content Include="HSR-html\css\font-awesome.min.css" />
+    <Content Include="HSR-html\css\mobile.css" />
+    <Content Include="HSR-html\css\owl.carousel.css" />
+    <Content Include="HSR-html\css\owl.carousel.min.css" />
+    <Content Include="HSR-html\css\owl.theme.default.css" />
+    <Content Include="HSR-html\css\owl.theme.default.min.css" />
+    <Content Include="HSR-html\css\styles.css" />
+    <Content Include="HSR-html\fonts\fontawesome-webfont.svg" />
+    <Content Include="HSR-html\fonts\UFL.txt" />
+    <Content Include="HSR-html\home.html" />
+    <Content Include="HSR-html\img\client-bg.png" />
+    <Content Include="HSR-html\img\client-logo-1.png" />
+    <Content Include="HSR-html\img\client-logo-2.png" />
+    <Content Include="HSR-html\img\client-logo-3.png" />
+    <Content Include="HSR-html\img\footer-bg.png" />
+    <Content Include="HSR-html\img\footer-line.png" />
+    <Content Include="HSR-html\img\footer-logo.png" />
+    <Content Include="HSR-html\img\line-style-white.png" />
+    <Content Include="HSR-html\img\line-style.png" />
+    <Content Include="HSR-html\img\line.png" />
+    <Content Include="HSR-html\img\logo.png" />
+    <Content Include="HSR-html\img\news-img-1.png" />
+    <Content Include="HSR-html\img\news-img-2.png" />
+    <Content Include="HSR-html\img\news-img-3.png" />
+    <Content Include="HSR-html\img\president-corner-img.png" />
+    <Content Include="HSR-html\img\slider-1.png" />
+    <Content Include="HSR-html\img\slider-2.png" />
+    <Content Include="HSR-html\img\slider-3.png" />
+    <Content Include="HSR-html\js\bootstrap.bundle.js" />
+    <Content Include="HSR-html\js\bootstrap.bundle.min.js" />
+    <Content Include="HSR-html\js\bootstrap.js" />
+    <Content Include="HSR-html\js\bootstrap.min.js" />
+    <Content Include="HSR-html\js\html5shiv.js" />
+    <Content Include="HSR-html\js\html5shiv.min.js" />
+    <Content Include="HSR-html\js\jquery.js" />
+    <Content Include="HSR-html\js\jquery.min.js" />
+    <Content Include="HSR-html\js\jquery.slim.js" />
+    <Content Include="HSR-html\js\jquery.slim.min.js" />
+    <Content Include="HSR-html\js\owl.carousel.js" />
+    <Content Include="HSR-html\js\owl.carousel.min.js" />
+    <Content Include="HSR-html\js\popper.min.js" />
+    <Content Include="HSR-html\js\respond.js" />
+    <Content Include="HSR-html\js\respond.min.js" />
+    <Content Include="HSR-html\js\scripts.js" />
+    <Content Include="HSR-html\template.html" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="HSR-html\.git\COMMIT_EDITMSG" />
+    <Content Include="HSR-html\.git\COMMIT_EDITMSG-TEO-SNauman" />
+    <Content Include="HSR-html\.git\config" />
+    <Content Include="HSR-html\.git\FETCH_HEAD" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-ShahidNauman-PC" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-10" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-11" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-12" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-13" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-14" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-15" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-16" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-17" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-18" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-19" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-2" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-20" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-21" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-22" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-3" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-4" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-5" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-6" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-7" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-8" />
+    <Content Include="HSR-html\.git\FETCH_HEAD-TEO-SNauman-9" />
+    <Content Include="HSR-html\.git\HEAD" />
+    <Content Include="HSR-html\.git\index" />
+    <Content Include="HSR-html\.git\index-TEO-SNauman" />
+    <Content Include="HSR-html\.git\logs\HEAD" />
+    <Content Include="HSR-html\.git\logs\HEAD-TEO-SNauman" />
+    <Content Include="HSR-html\.git\logs\refs\heads\Sprint01" />
+    <Content Include="HSR-html\.git\logs\refs\remotes\origin\HEAD" />
+    <Content Include="HSR-html\.git\logs\refs\remotes\origin\master" />
+    <Content Include="HSR-html\.git\logs\refs\remotes\origin\Sprint01" />
+    <Content Include="HSR-html\.git\logs\refs\remotes\origin\Sprint01-TEO-SNauman" />
+    <Content Include="HSR-html\.git\objects\00\fc2503a56a1b7384daf6603e88de7d514440fd" />
+    <Content Include="HSR-html\.git\objects\01\1e7ca243c1b17d11b0671e3f7ce893d359215e" />
+    <Content Include="HSR-html\.git\objects\01\b291eb94bba51967cc0ac439cf08347dd0cb8f" />
+    <Content Include="HSR-html\.git\objects\01\cbecc54be5608e800fc86bbf7ef1ad1fa71924" />
+    <Content Include="HSR-html\.git\objects\02\473f136cd5e64bc12381419fe4045478125491" />
+    <Content Include="HSR-html\.git\objects\02\87e02d27a20512d12c949ec0235dc2fffc29fe" />
+    <Content Include="HSR-html\.git\objects\02\e8dec900fb1009681dd81f1134d5735e337993" />
+    <Content Include="HSR-html\.git\objects\04\cf0db6b83d59aeb89d6acd8b2b2be63847cd4b" />
+    <Content Include="HSR-html\.git\objects\05\2603d727028bca296434779b7995eb4852ea65" />
+    <Content Include="HSR-html\.git\objects\06\28867f9db7195817419e9d3b3bdb0b28b4406d" />
+    <Content Include="HSR-html\.git\objects\06\73510c2df9b56ae95d16a860132ceb3122831f" />
+    <Content Include="HSR-html\.git\objects\07\2d3fc0d75b066e285f22f8fc4266d12a205490" />
+    <Content Include="HSR-html\.git\objects\07\b380e3c1e0b7c78c7c3c4a4cefa64094d96235" />
+    <Content Include="HSR-html\.git\objects\07\fd33bb618f444bd2e6aa3e633a153f442e4498" />
+    <Content Include="HSR-html\.git\objects\0a\85e8f9ccd67149b9a8239365fc4696a1e8134d" />
+    <Content Include="HSR-html\.git\objects\0a\efe98ce32ed385fd9711de095d5744e8484f81" />
+    <Content Include="HSR-html\.git\objects\0d\d475a468a0757b7ded7272a8b5192b09477d06" />
+    <Content Include="HSR-html\.git\objects\0e\e46e43e04d6ab57025a5774525b8df128938ee" />
+    <Content Include="HSR-html\.git\objects\15\2a47b1298ab8d55c96945dc7961835fa6abc33" />
+    <Content Include="HSR-html\.git\objects\15\40ac1b7889c4a8604b1e26813285eb7fdb3aad" />
+    <Content Include="HSR-html\.git\objects\16\1fb74d083ea9de7b277650b698bb6fa90b4203" />
+    <Content Include="HSR-html\.git\objects\17\41a62320c3522ce04344f0ca1ca658decc216b" />
+    <Content Include="HSR-html\.git\objects\19\118a94da26ca3e7f98d9e548664f3a9c8ff2db" />
+    <Content Include="HSR-html\.git\objects\19\ee66d27b4f04fda5ea16cc81174819fbf3ead3" />
+    <Content Include="HSR-html\.git\objects\1a\8711c4a17b5f2341c399118afc0546d287c96d" />
+    <Content Include="HSR-html\.git\objects\1b\ebc4f1bc90d51d4beaebc6a14d587d1f0f8501" />
+    <Content Include="HSR-html\.git\objects\1c\7a65eabe81de63cd7ce203f1406b2f2414af67" />
+    <Content Include="HSR-html\.git\objects\1d\c975342b5d35e63803353c7709ce3e34be81ec" />
+    <Content Include="HSR-html\.git\objects\1d\cc19d99c8b69db2a9dc3d8125a68b041708b65" />
+    <Content Include="HSR-html\.git\objects\1e\8dbd351833fc69ce3fec6eafd0c5430c04c4cf" />
+    <Content Include="HSR-html\.git\objects\1e\c4ee851baaa2eaed300ff151b9304c73a5bab9" />
+    <Content Include="HSR-html\.git\objects\1e\ce042ac23a93193597167153b7373b7ff28e62" />
+    <Content Include="HSR-html\.git\objects\1f\0b8d2b9eea4cabf27219263277fa731219dc60" />
+    <Content Include="HSR-html\.git\objects\1f\8d502a1c42bb5a835231e6e9dcf0399015651b" />
+    <Content Include="HSR-html\.git\objects\1f\fa7ad3c16c9811fc237669d9da55eca6e38feb" />
+    <Content Include="HSR-html\.git\objects\20\1d2c083b3ed2b0776c09b1e0aa32a20c3db07a" />
+    <Content Include="HSR-html\.git\objects\21\876a4c5f37b514bc9b6d0273cdcdf569f018b9" />
+    <Content Include="HSR-html\.git\objects\22\9e58c6fca947d70d80b18fa2a678c7625615c1" />
+    <Content Include="HSR-html\.git\objects\23\012111795c3d7c89f65831c0e85ef9f974a3c5" />
+    <Content Include="HSR-html\.git\objects\24\3ee7c599e245b0f482d5e0687159519bfc6c5b" />
+    <Content Include="HSR-html\.git\objects\24\759d7013b3c9436a53f4131bebe83d690bbecd" />
+    <Content Include="HSR-html\.git\objects\25\162923431471559581eab2507139f6880e486c" />
+    <Content Include="HSR-html\.git\objects\25\b3a22531d3e8e3378fb6697e401430039dc467" />
+    <Content Include="HSR-html\.git\objects\26\2c7ee93097ae7d2b93a8810dfcf212e5f352fe" />
+    <Content Include="HSR-html\.git\objects\26\f16bbd0352d57aef0a20bbf4e742ee97651c72" />
+    <Content Include="HSR-html\.git\objects\28\121fe8c01b825af63775e865b6420b7322f7c2" />
+    <Content Include="HSR-html\.git\objects\28\d3aefa6702c8b2b8e90a7a6f05acd50b371e6f" />
+    <Content Include="HSR-html\.git\objects\28\fd6c54e3770ec926ecfe4646bb3be2043f98eb" />
+    <Content Include="HSR-html\.git\objects\29\a0e2b575a3620c01f94fa12be9d83a88a9295c" />
+    <Content Include="HSR-html\.git\objects\2a\0d2e8a51d30d00a7f5fd8bc5b56bae302d93a8" />
+    <Content Include="HSR-html\.git\objects\2a\20111f20025918f3a5492aa6a0ef59306073f3" />
+    <Content Include="HSR-html\.git\objects\2a\999a9a2be5e89ae34fae259be5ac3a5ee726c9" />
+    <Content Include="HSR-html\.git\objects\2a\a40f331fb685d5e4f84b998a35157d00638e00" />
+    <Content Include="HSR-html\.git\objects\2b\83f3099a434c59f8fcb2f15aed4342836970ed" />
+    <Content Include="HSR-html\.git\objects\2b\a2bb744144847a2379de98d0ecf86bad2a6cb9" />
+    <Content Include="HSR-html\.git\objects\2b\acad60d510da1b9e8fffe89d34c46624e629a9" />
+    <Content Include="HSR-html\.git\objects\2c\1a70f9fd68b193b54fe91ea9124a89fd942d33" />
+    <Content Include="HSR-html\.git\objects\2c\3bd4b3c9b66104ed9d5f90c1505e6c4776d6e7" />
+    <Content Include="HSR-html\.git\objects\2d\054f3e35076b68c8252410dc185adaa7aa2d1d" />
+    <Content Include="HSR-html\.git\objects\2d\44c9d343d2f35de01e0c9b9328f98235a3f161" />
+    <Content Include="HSR-html\.git\objects\2d\c40b65e8e5af39892096281edef328e4bb3789" />
+    <Content Include="HSR-html\.git\objects\2e\33d4e92c0d1bbd7315126fda18306d7f96f076" />
+    <Content Include="HSR-html\.git\objects\2e\9a3cdd198f85cda22465286771d209bc549fd3" />
+    <Content Include="HSR-html\.git\objects\2f\e38f5a456b6267611753c3ab4a40348c0996e7" />
+    <Content Include="HSR-html\.git\objects\30\727c76d543ff3f5ae6a4cf578f0ce062f1e2e1" />
+    <Content Include="HSR-html\.git\objects\30\981865b341445c21a82e758cb21416560fe104" />
+    <Content Include="HSR-html\.git\objects\30\fd2b375c9d1a3082f70279336a62ecd8db5050" />
+    <Content Include="HSR-html\.git\objects\32\48c776024206bd849003d3265cad6864bcee23" />
+    <Content Include="HSR-html\.git\objects\32\5f2e65a771b85b18ebf4f7771ff36a01493c13" />
+    <Content Include="HSR-html\.git\objects\33\6b5e79e0cc6181d1a1d6ed10717ccd93ce4bb8" />
+    <Content Include="HSR-html\.git\objects\34\63268195db049138e7237b0419d9e5146142c3" />
+    <Content Include="HSR-html\.git\objects\35\a8fb4a633409b1c3b8afd89d2e08c1dcc8caee" />
+    <Content Include="HSR-html\.git\objects\37\7e3fb2f00859a70956ded5b8b0d522ed85cfc3" />
+    <Content Include="HSR-html\.git\objects\37\aaaff02036878e4d086374bc63dc5522a14121" />
+    <Content Include="HSR-html\.git\objects\37\fee14b34ba7c49ace41153d422823b4734f095" />
+    <Content Include="HSR-html\.git\objects\3a\5bff81c8f6de1315129c8979d1adb6a68d0188" />
+    <Content Include="HSR-html\.git\objects\3b\916a322b585b67036105f3f8c9e92a995795c0" />
+    <Content Include="HSR-html\.git\objects\3c\1837c5681c9cc71b0c9b4264a4f600ccd03f8d" />
+    <Content Include="HSR-html\.git\objects\3c\7d8ffd6d96f564ec6b1497c48d998fc70eadc7" />
+    <Content Include="HSR-html\.git\objects\3c\a0be8bd0a90b78547be51d1b6d08226d2303f8" />
+    <Content Include="HSR-html\.git\objects\3d\91451da110f975d1ffd6464e61ec31a42ff21c" />
+    <Content Include="HSR-html\.git\objects\3d\c7be52c8e088d573647755b1d9893a908318b1" />
+    <Content Include="HSR-html\.git\objects\3e\4d7c38da8761b179fdebc37204d05533ad72c1" />
+    <Content Include="HSR-html\.git\objects\3e\4ffb9168a347214e7eeba913c390af00ff5223" />
+    <Content Include="HSR-html\.git\objects\3e\ffa6f1c5053aba4b4a41c3514eb746b5388af1" />
+    <Content Include="HSR-html\.git\objects\3f\a77a3fa14d7f666d3b6ee17d2eb67b3cabd591" />
+    <Content Include="HSR-html\.git\objects\40\02d6aa8fac6c6822d25bee38dbb5bd3775db48" />
+    <Content Include="HSR-html\.git\objects\40\4c4690f86256d08cc1dfff1f1bb71244dc3546" />
+    <Content Include="HSR-html\.git\objects\42\358013b55c8f15ed7ec743d8bbdd34848e4cdb" />
+    <Content Include="HSR-html\.git\objects\42\ec17c9ba7d4bd69492dcbea325c838fe29113b" />
+    <Content Include="HSR-html\.git\objects\43\aae0b3924bf3e67ffed4357482551b083e6dd9" />
+    <Content Include="HSR-html\.git\objects\44\6da0a556db4a3d850d3810b6038b189d07ac7a" />
+    <Content Include="HSR-html\.git\objects\44\b9c92032d1941ca8bce5be3a525ab1116362bf" />
+    <Content Include="HSR-html\.git\objects\45\6aa4c6dd52d79bfdc7b4434ca8f7d8ac17a291" />
+    <Content Include="HSR-html\.git\objects\45\b3e47ae91435d5a7bca27f27871bcbb8866971" />
+    <Content Include="HSR-html\.git\objects\46\7901b8a781f3fafc04a8b30c3fb8247f2aa0c2" />
+    <Content Include="HSR-html\.git\objects\47\768cdda7bc82f7deef2bb6671cf3bbe643f13d" />
+    <Content Include="HSR-html\.git\objects\49\0ef7d5abfee8a95bf8b2be63ce5a71f758882e" />
+    <Content Include="HSR-html\.git\objects\4a\034658ca3194aeb9ecfd7bf924339ba85a6816" />
+    <Content Include="HSR-html\.git\objects\4a\5a86f4326e5e99fec43932b3def3d2a6c5764a" />
+    <Content Include="HSR-html\.git\objects\4a\6c2819e5de8ddda696e2a55d8396135594b6bf" />
+    <Content Include="HSR-html\.git\objects\4a\d3105fc3b7c1ab84107818981209497723e742" />
+    <Content Include="HSR-html\.git\objects\4a\f5b76730406eb982ff91a12a9b79b53671a5d3" />
+    <Content Include="HSR-html\.git\objects\4b\83fb488bd621e3663b14b4447c67b9ab2cf121" />
+    <Content Include="HSR-html\.git\objects\4b\a277208a7ab5b4e44b301276075ea47761dcec" />
+    <Content Include="HSR-html\.git\objects\4c\01bb438f6a7e6dea9438cea81ec1c3e7c27c0a" />
+    <Content Include="HSR-html\.git\objects\4d\08ae2d99b48aa4076cd51993d9a321fbab9662" />
+    <Content Include="HSR-html\.git\objects\4d\2f7edfa66dbf3811a2ae1655022b77e80db2db" />
+    <Content Include="HSR-html\.git\objects\4d\ffa5a7cefa4dbb71cd82ddc22aed9ac6c9f6a9" />
+    <Content Include="HSR-html\.git\objects\4e\f9b1d21bba8d8e2c8d6a75ef3d705c92afbcb5" />
+    <Content Include="HSR-html\.git\objects\4f\1f8662c87a2fb97ece5c29d1d4e2243e7ca068" />
+    <Content Include="HSR-html\.git\objects\4f\40a1ededbb9be7b61de51a6dbe49ec946b0958" />
+    <Content Include="HSR-html\.git\objects\4f\50671c03f362e8439f5cd8dfb33a708a505c52" />
+    <Content Include="HSR-html\.git\objects\4f\886e3c229560e0ff4a0a6aa6c3deb310150b0c" />
+    <Content Include="HSR-html\.git\objects\50\b90ac7d322f6d7169ea3589f188b3d1f9f3ac4" />
+    <Content Include="HSR-html\.git\objects\51\1886403887f95a901058a84d578d8c7bbd73c7" />
+    <Content Include="HSR-html\.git\objects\51\75e3813c7919ad989c8ec332f4006a7b0e11e3" />
+    <Content Include="HSR-html\.git\objects\51\e6ec5eb33483749eeafcb5354a12b9e019ce2a" />
+    <Content Include="HSR-html\.git\objects\52\17d5b6df83454d9ecfcc2ed61e3449a6e29418" />
+    <Content Include="HSR-html\.git\objects\52\59c1301fdc3adb6d9ea84ca63fb6e6ab70a7b4" />
+    <Content Include="HSR-html\.git\objects\52\ebf244a694afc109747328d16c663ab6d9ccf0" />
+    <Content Include="HSR-html\.git\objects\53\986623060cfb41d1c55d95057ad75e01e10ad7" />
+    <Content Include="HSR-html\.git\objects\54\49fdd9d94469155da560627b5c830d383b946a" />
+    <Content Include="HSR-html\.git\objects\54\5dd5b87c58c5a99ce3dcccc6f8f263df245f23" />
+    <Content Include="HSR-html\.git\objects\56\f9751a2c7afb6aa6184913bedb3cff8aa50786" />
+    <Content Include="HSR-html\.git\objects\57\7c85cdcbb51e3d2152c1adbec3ea2dfb25782f" />
+    <Content Include="HSR-html\.git\objects\57\cfe2905e7ce0789625613571d2ddf73a0701e8" />
+    <Content Include="HSR-html\.git\objects\59\170d85b03fe8ad773fca17a4591b47217bb79d" />
+    <Content Include="HSR-html\.git\objects\59\5762aa0be04cd3faf7759f7410651bd214361c" />
+    <Content Include="HSR-html\.git\objects\59\68b51119e9243643b2fbf2429a69e0cf043f8e" />
+    <Content Include="HSR-html\.git\objects\59\703c62cd496d03d100443d994ccb3460903c9b" />
+    <Content Include="HSR-html\.git\objects\59\836030778b5cfcedf6abcc548f83532628711d" />
+    <Content Include="HSR-html\.git\objects\5a\76d5a1807fbfad49809c1307125ddc13c61b1d" />
+    <Content Include="HSR-html\.git\objects\5d\77b4678a0b70ad49826941358f5c4df5e04e4d" />
+    <Content Include="HSR-html\.git\objects\5d\a617105b6dacc3ad3735a9131181d3ad152e49" />
+    <Content Include="HSR-html\.git\objects\5e\6a3b095ccd830c984934694e9f09bf40b53912" />
+    <Content Include="HSR-html\.git\objects\5e\953b3335c3462d840770f2eb55d5907bc756cf" />
+    <Content Include="HSR-html\.git\objects\5f\2f24e5fd60dbf4af855075a1cd902537e57088" />
+    <Content Include="HSR-html\.git\objects\60\63cf1032d21b35a9a7ee0c2dd828a65279d644" />
+    <Content Include="HSR-html\.git\objects\60\c542fcf810a2c7efd1690f7eec1b21fa51aaf0" />
+    <Content Include="HSR-html\.git\objects\60\e406dee49c5c1bcad4a21d413f40e9999fcb85" />
+    <Content Include="HSR-html\.git\objects\63\d5f16d0b120dca42b3a821df146a6498e21a82" />
+    <Content Include="HSR-html\.git\objects\65\58315c1ad6987fa4e9c14f148287967065dae3" />
+    <Content Include="HSR-html\.git\objects\67\1e221ad38e42c03a14169f9cb0f9f20170f5ec" />
+    <Content Include="HSR-html\.git\objects\67\51708d160007328ed96b15b2642dbad1faed26" />
+    <Content Include="HSR-html\.git\objects\67\724eeb01ddca67f010a9344969494d410a894d" />
+    <Content Include="HSR-html\.git\objects\6a\43d3fb6ec59c60b2fa20d1b725c15257bcee11" />
+    <Content Include="HSR-html\.git\objects\6a\ce3515408edd1c7cf415ecf82201b609cb8d6a" />
+    <Content Include="HSR-html\.git\objects\6b\049e9944a4b740bc8bf0cd26af82ea9cfedc9d" />
+    <Content Include="HSR-html\.git\objects\6b\44f2ca45fd42c97c4021d27eef75b4a1a9f390" />
+    <Content Include="HSR-html\.git\objects\6c\6ce29ed455f3a2aeddbceb3a5d3d268844af9c" />
+    <Content Include="HSR-html\.git\objects\6c\a7e04ccee8e8d2ad3efe8a47a6ffdb0c1b684d" />
+    <Content Include="HSR-html\.git\objects\6d\43c6e57a9fb454298c496746665f170a7c68a9" />
+    <Content Include="HSR-html\.git\objects\6d\7b0f2e0465ddf3fcdf954b3102f0480d5d01cf" />
+    <Content Include="HSR-html\.git\objects\6e\4932bd09c1b128317a4c475856dd202e8520bd" />
+    <Content Include="HSR-html\.git\objects\6f\0a391324ba041203b1171c58fd9ed83a511fbd" />
+    <Content Include="HSR-html\.git\objects\70\ce5a330ae82366e603e7f2b2734b348307b46c" />
+    <Content Include="HSR-html\.git\objects\70\f6989d7a1f4cf7cec7b5f465fa6c7c1cf1f8dd" />
+    <Content Include="HSR-html\.git\objects\71\f38df8a1450df56b36660f99a0b8e7c6fa2659" />
+    <Content Include="HSR-html\.git\objects\72\43aadafc0b0b1952b2cdf8bdbce29150c2bef6" />
+    <Content Include="HSR-html\.git\objects\72\86ca3c7310c90c939e8a28e5954ff4158414d5" />
+    <Content Include="HSR-html\.git\objects\72\fc3a4f97ff233d2eb8db011376991d13d30c98" />
+    <Content Include="HSR-html\.git\objects\73\0efe1410d453341469455881864a8574032bd9" />
+    <Content Include="HSR-html\.git\objects\73\e14463f482d3d95e6ff5fc89c19250a6a56cd1" />
+    <Content Include="HSR-html\.git\objects\77\a4dd3579245c68a22771ae9332dd5962eac0d8" />
+    <Content Include="HSR-html\.git\objects\78\3d0880aa141be23adada3769f154d79db0c461" />
+    <Content Include="HSR-html\.git\objects\7a\036e15965123f2245eddf82c158189ec7b8522" />
+    <Content Include="HSR-html\.git\objects\7a\c6d2c009add1b07754ebac883a8653cd4da3c9" />
+    <Content Include="HSR-html\.git\objects\7b\9526823b82b06cb3d5815bd7279cd5adfb8330" />
+    <Content Include="HSR-html\.git\objects\7c\8b83a41b806c47930a9825035410a7f7f2caad" />
+    <Content Include="HSR-html\.git\objects\7f\418012a1a4d4552130b77a2b8768ae184a4fe1" />
+    <Content Include="HSR-html\.git\objects\7f\87cf3b534a5447b5b7cd19d46ea76a3e9298a1" />
+    <Content Include="HSR-html\.git\objects\80\808b96b4bf83be2d42a262cd0721bfb4ce0119" />
+    <Content Include="HSR-html\.git\objects\80\9d964b197c2e87ec2654f5600f07a8633e46d4" />
+    <Content Include="HSR-html\.git\objects\81\15f7907a26ab676484e24786651cbd8fd04ad0" />
+    <Content Include="HSR-html\.git\objects\81\d92bafa50ebaa0331f918bf18dfab829ab056e" />
+    <Content Include="HSR-html\.git\objects\81\e21dcc6d770a05a8c06fcc681367fa38af59ef" />
+    <Content Include="HSR-html\.git\objects\82\df07dbfa0927291da7f2d79dc14d2ca2863500" />
+    <Content Include="HSR-html\.git\objects\82\e5632c180fcf8369511775fd601e76e2a072ad" />
+    <Content Include="HSR-html\.git\objects\84\8df5853df41825555a6a358b1ad7f086992864" />
+    <Content Include="HSR-html\.git\objects\85\97245378709259f025bfb05903ad8d25f9ec7a" />
+    <Content Include="HSR-html\.git\objects\85\be237e8bedbb91f086b9db15cb193735eefe75" />
+    <Content Include="HSR-html\.git\objects\86\077e95e3ae746031d045e405604206c50dc8aa" />
+    <Content Include="HSR-html\.git\objects\87\270f85cba762a7a360d62f67dc21cfc76e427a" />
+    <Content Include="HSR-html\.git\objects\87\6c109ccabf019592ba8d2a544a8e42333d3b37" />
+    <Content Include="HSR-html\.git\objects\88\a472282af1be82ab745a411e1cdf82ac16548f" />
+    <Content Include="HSR-html\.git\objects\8a\066ebcf018538d1ba773e26fe227ca37c33505" />
+    <Content Include="HSR-html\.git\objects\8b\d8e2f9d8a79612be0c533b50547e7ce87a465e" />
+    <Content Include="HSR-html\.git\objects\8b\fb7ed6764bafc6c7e3ebe15c5db910f3f00f2c" />
+    <Content Include="HSR-html\.git\objects\8e\ad401610e9fdf231d6eb32914f770ad2f1d193" />
+    <Content Include="HSR-html\.git\objects\8f\5dfd5dc97100a1cbc3f236000ae98a276e6f31" />
+    <Content Include="HSR-html\.git\objects\90\27b944d42167381ea276d6afa84b8e553fee22" />
+    <Content Include="HSR-html\.git\objects\90\6e3ac3510cfd0f92cc8667983ca36924a5f672" />
+    <Content Include="HSR-html\.git\objects\90\fd63a67201394caf8502d6cbdb1a373711e68a" />
+    <Content Include="HSR-html\.git\objects\91\422bda2323486c4c3beb863909326c99671628" />
+    <Content Include="HSR-html\.git\objects\91\461bbaafa75851855c1c1f92231175507ab65c" />
+    <Content Include="HSR-html\.git\objects\92\0fdfc005ff9c9f166dfa471bf91796e06e142e" />
+    <Content Include="HSR-html\.git\objects\92\2059d0d721aaee0e92525457f1277c5f0bf5bc" />
+    <Content Include="HSR-html\.git\objects\92\518e5070238ac4586d684df069d6f3554d096a" />
+    <Content Include="HSR-html\.git\objects\93\0143507a28b54e21bbc2e412d0bd0823970442" />
+    <Content Include="HSR-html\.git\objects\94\c08fb4a0df68862730db212ddc566ddfa7aabd" />
+    <Content Include="HSR-html\.git\objects\95\1f42e0a2d01ac89c2146f0e7a71e4ef44d12bf" />
+    <Content Include="HSR-html\.git\objects\96\2a6b98e111b396039e3641c63c18125f691a41" />
+    <Content Include="HSR-html\.git\objects\96\9e1dd9d7b9fc008f41b1f115310c9992aab270" />
+    <Content Include="HSR-html\.git\objects\96\a74abdd8f0f046fe29b5b3aa59b0fe6b852bfc" />
+    <Content Include="HSR-html\.git\objects\98\44aa1cc17bb72729b1eae3677c7cd4da688d66" />
+    <Content Include="HSR-html\.git\objects\9a\47273f911d103ae0539f2ae060e131ae1382e2" />
+    <Content Include="HSR-html\.git\objects\9b\6b8972beb3836a9a809318bc0a0a0e84cd2ceb" />
+    <Content Include="HSR-html\.git\objects\9b\9566f4b968a5d5325c7ece1f10fee3b5d8e674" />
+    <Content Include="HSR-html\.git\objects\9c\081cb0d6ce8891031155897b31cc1cb698a89b" />
+    <Content Include="HSR-html\.git\objects\9c\2105a4714c3a300f94dea49fbee1f89e476933" />
+    <Content Include="HSR-html\.git\objects\9c\905c43e93b007cfa2cefa3b923b148c0f5a80e" />
+    <Content Include="HSR-html\.git\objects\9d\7f94876f24fd6be5b253986b25b8f87f1c1a68" />
+    <Content Include="HSR-html\.git\objects\9d\8440bceee74a0ef30dfc4898b43a549dca7699" />
+    <Content Include="HSR-html\.git\objects\9e\3b27ae2ca123528173691f8a1bd4b800b2b9a3" />
+    <Content Include="HSR-html\.git\objects\9e\cf3fdcf5d1d654c3935517a08733e5758b3726" />
+    <Content Include="HSR-html\.git\objects\9f\298fc4100f7b31b87d1eb1bc60f1cbc54ade25" />
+    <Content Include="HSR-html\.git\objects\a0\1034237b5bd041f9229ac06d9d2fc58a36f276" />
+    <Content Include="HSR-html\.git\objects\a0\941118f87b1bae127a4e398ed62c8c0bf65440" />
+    <Content Include="HSR-html\.git\objects\a1\494ab5e987837d566bc7bd23297761f072480d" />
+    <Content Include="HSR-html\.git\objects\a1\88f91149278f7b88c243dc55883264c9b0a10e" />
+    <Content Include="HSR-html\.git\objects\a2\177072308ea46f9d3be6ca42d5440cbd860939" />
+    <Content Include="HSR-html\.git\objects\a3\bc91113c9a4898883a64600d2f3056f01874e8" />
+    <Content Include="HSR-html\.git\objects\a6\1a5168a7eaffe9b938dc581fa8006c3bfbf9c8" />
+    <Content Include="HSR-html\.git\objects\a7\fafca51dd5dcae0e550226e1572a4535667a2a" />
+    <Content Include="HSR-html\.git\objects\a8\13abafaf1d67f544482aa4566b2b7e067a1bfe" />
+    <Content Include="HSR-html\.git\objects\a8\6a0c517a242c466de9569f85997aadea423118" />
+    <Content Include="HSR-html\.git\objects\aa\24a041000bf35ab55fd85b56caeab086b34621" />
+    <Content Include="HSR-html\.git\objects\aa\273bdf134b3ae16990b065d64263786e63f39d" />
+    <Content Include="HSR-html\.git\objects\aa\b7f2e4fc2f4e6e2e21cf2289b95b54de3e8a83" />
+    <Content Include="HSR-html\.git\objects\ab\764bc2277bc147aebc8faee1508ce9de4933ee" />
+    <Content Include="HSR-html\.git\objects\ad\b0ef5e5dd64235d6fb3854ee21a8ad2725a437" />
+    <Content Include="HSR-html\.git\objects\ad\cfb73397cbc60bf279bb9b71d71928cb3b1cc8" />
+    <Content Include="HSR-html\.git\objects\ae\24bcc94f404d2ca42c48bd2090a3b7dc6000e8" />
+    <Content Include="HSR-html\.git\objects\ae\29dd5e7b71d51d7fb73f4077074fcf4e3d30f4" />
+    <Content Include="HSR-html\.git\objects\ae\e373c1d1c8f89c889169f49f4076442e7605ff" />
+    <Content Include="HSR-html\.git\objects\af\4c49e5e61dde98bf7718230282264e027496c1" />
+    <Content Include="HSR-html\.git\objects\b0\8362dffec0e89d501c52a3ee785ca85f283744" />
+    <Content Include="HSR-html\.git\objects\b1\c8e6746781b83d102c6402e76284a381b3311a" />
+    <Content Include="HSR-html\.git\objects\b1\e624d39008398999a1f0418cfe40e75aa1d5b9" />
+    <Content Include="HSR-html\.git\objects\b2\ea5946419cf85b6eeefe0abe458280e6f5ce85" />
+    <Content Include="HSR-html\.git\objects\b3\2feee2f9fb863af01f3a9da08f3abd0bcd2c6d" />
+    <Content Include="HSR-html\.git\objects\b3\b8a2472b3452752c2e74e228f7b572a19bdb1e" />
+    <Content Include="HSR-html\.git\objects\b4\a23f6d31bbb888691726f66250551979419bac" />
+    <Content Include="HSR-html\.git\objects\b5\6d94e58755fd5b4a6e9a344aa7501b1093e46b" />
+    <Content Include="HSR-html\.git\objects\b5\795d31890ff12c77a658b5f457ae68e81f1ea1" />
+    <Content Include="HSR-html\.git\objects\b5\ce66d3aa1684efd44c8230cdd5156c715c9aaa" />
+    <Content Include="HSR-html\.git\objects\b5\d9ac3a58e39d20a09d8fadb3c76f853f970b40" />
+    <Content Include="HSR-html\.git\objects\b7\34f119d5b13915c316ae37666b25c72af2a56a" />
+    <Content Include="HSR-html\.git\objects\b8\0a19bcb7bdc3c3c4e4e877d176f5f41643f35e" />
+    <Content Include="HSR-html\.git\objects\b9\5f8e86deb2e714ba2c51f71fde0df84d7e7fa1" />
+    <Content Include="HSR-html\.git\objects\ba\a1f0773980b75b5e580db2f0e1d58025da75c2" />
+    <Content Include="HSR-html\.git\objects\bb\c4b654d40d0af4c2260cc8c0b9fa04007884ff" />
+    <Content Include="HSR-html\.git\objects\bb\dc6b0c078ca7d7f0b5ab9706f9fb9c004b4276" />
+    <Content Include="HSR-html\.git\objects\bb\e1555a4b5d403d74b123c7a5b4cea5d4c15c36" />
+    <Content Include="HSR-html\.git\objects\bc\8ba427e48c185d611f483b293c4f71da95cfe3" />
+    <Content Include="HSR-html\.git\objects\bd\0a8b5e578e3dce7ce9e2d083a158afa2e9cd5f" />
+    <Content Include="HSR-html\.git\objects\bd\b77bd319f214ee78eb12460ce1409dbee4a87f" />
+    <Content Include="HSR-html\.git\objects\be\25fd655afc60607b3fd1ce71492752c5ac70c8" />
+    <Content Include="HSR-html\.git\objects\be\2b43dd3b6eed2ca334ea57bbcb8c02f207f78c" />
+    <Content Include="HSR-html\.git\objects\bf\c414816d1a345160313288b2102650b8958c5a" />
+    <Content Include="HSR-html\.git\objects\c0\4996ba294ab7d6b3df00aa4497203db31c17f7" />
+    <Content Include="HSR-html\.git\objects\c1\03141ce758babf425530ee2c2950e234668388" />
+    <Content Include="HSR-html\.git\objects\c1\5d4c1c9eb7b3a1e339101e503d2c07fb2dbad9" />
+    <Content Include="HSR-html\.git\objects\c1\6b9f1f581e392cb5e89f308b54f71167a2fbbe" />
+    <Content Include="HSR-html\.git\objects\c3\0658937b29546dfc34607e91d2dca248fd0e5d" />
+    <Content Include="HSR-html\.git\objects\c3\c54fa0de20e84247918ea1b2d4d918c2839c6c" />
+    <Content Include="HSR-html\.git\objects\c3\e652a5af59c66a35c6214ec9c0182b1b56237d" />
+    <Content Include="HSR-html\.git\objects\c4\5977aa0aea4be4e4517c6ccf7a0f081406c2d3" />
+    <Content Include="HSR-html\.git\objects\c6\1c0433963c88d4a75b91de8b836c579c540ccb" />
+    <Content Include="HSR-html\.git\objects\c7\d433f46de58d4d3f49a377f9c17095d421d9f2" />
+    <Content Include="HSR-html\.git\objects\c8\fb1159de5c2fd8ea13ffd79be8fe51b86ad261" />
+    <Content Include="HSR-html\.git\objects\c9\58c75e684cb4f5882fc894116535a6d336b308" />
+    <Content Include="HSR-html\.git\objects\ca\59040aace27d0b4636a041dff346a4aea93fca" />
+    <Content Include="HSR-html\.git\objects\cc\204d55c23fcf98472daa23668e3fe70f06bc3c" />
+    <Content Include="HSR-html\.git\objects\cc\85d59ddfeeee2580c05c83c85eda41ba1b6d55" />
+    <Content Include="HSR-html\.git\objects\cc\b3a52425ed9660b670e6fbe1bb28a66e265234" />
+    <Content Include="HSR-html\.git\objects\cf\9602b71ca0df92989f9e96b760426d2c2fcfb8" />
+    <Content Include="HSR-html\.git\objects\cf\9c99885a2e5ddeba37b9875515aedf686b6992" />
+    <Content Include="HSR-html\.git\objects\cf\b9ca7fc44e687d060aa7b7911d49c923f04a02" />
+    <Content Include="HSR-html\.git\objects\cf\db13cf0feb804376b10d8c0fe8cefa91615bcb" />
+    <Content Include="HSR-html\.git\objects\d0\1285257936d9eab5e5fd14921946d595032a98" />
+    <Content Include="HSR-html\.git\objects\d0\36932b84b02235723e0d07ff18d68f2871d9c0" />
+    <Content Include="HSR-html\.git\objects\d0\690dec4c48c964b711ee3bb506ffe8ac076f25" />
+    <Content Include="HSR-html\.git\objects\d0\9353f613aafe1e67e2eb679844cac3be130857" />
+    <Content Include="HSR-html\.git\objects\d1\042e05d30db49a81b7f251d219a60076558696" />
+    <Content Include="HSR-html\.git\objects\d1\3e53c86dd5fa4ed94245d90e7b7f456cb7a50d" />
+    <Content Include="HSR-html\.git\objects\d1\ab65fc385f42d33230c233a7c356ffb8eafebe" />
+    <Content Include="HSR-html\.git\objects\d1\eac865ee73ffcd03a1087154b79cf0bffc74a4" />
+    <Content Include="HSR-html\.git\objects\d2\51eb2bcfb781cc6d71661bf45617a0631c1ef2" />
+    <Content Include="HSR-html\.git\objects\d2\617e4b76244168bce0a736d123f372ccbddb87" />
+    <Content Include="HSR-html\.git\objects\d3\88c8c5fd159f46bae0e1d9898671f4d0294994" />
+    <Content Include="HSR-html\.git\objects\d3\8ff06ce97a24c5595f189b6a13ce61ca762391" />
+    <Content Include="HSR-html\.git\objects\d3\e84166df54309c21aab8f25a87c75acd2a2474" />
+    <Content Include="HSR-html\.git\objects\d4\03d5c1c50c5397b6e6af7010d2571324da9769" />
+    <Content Include="HSR-html\.git\objects\d4\f93717f9ac791269e9b66d5c6e0c784e7d5598" />
+    <Content Include="HSR-html\.git\objects\d6\1383a2582155fff9321c70fddcef3d775ca233" />
+    <Content Include="HSR-html\.git\objects\d6\ca76bd913d07a41a15b3035da3800e90e1824b" />
+    <Content Include="HSR-html\.git\objects\d7\006bc6f3e0759392071d1b9edc17d3571ccb18" />
+    <Content Include="HSR-html\.git\objects\d7\24acf8f111c42f2778e87ffbbbd66f707fb9c4" />
+    <Content Include="HSR-html\.git\objects\d9\e34a4ee943d18fa20bb254c5322b55f7ab7833" />
+    <Content Include="HSR-html\.git\objects\da\680b0adfd616a908a14886b49cfc9ac26d7562" />
+    <Content Include="HSR-html\.git\objects\db\7e89878de5e6a19736d4e562dec609e5ae5e38" />
+    <Content Include="HSR-html\.git\objects\db\b179acb81d4bb5ab417c575e475165f504586b" />
+    <Content Include="HSR-html\.git\objects\dd\933fdb4427e144cbb2914a41ff9ea2c4614b22" />
+    <Content Include="HSR-html\.git\objects\e1\679ea1273fd5bc11e22bb60e691e352627687f" />
+    <Content Include="HSR-html\.git\objects\e1\6b00c953040044a9fb743770ff95215821ebfe" />
+    <Content Include="HSR-html\.git\objects\e1\9b494bd12db19c0f496d8ea3fe440090d4bf50" />
+    <Content Include="HSR-html\.git\objects\e1\f0d446906c083944a71df7409000a88e724435" />
+    <Content Include="HSR-html\.git\objects\e2\c03d67a876994da40e795a25e3520d307264e1" />
+    <Content Include="HSR-html\.git\objects\e3\8f80b19831eeedd04049eb39e40f5fd6b11404" />
+    <Content Include="HSR-html\.git\objects\e3\97dc6d143536ad9b8e6dc26ecdf0434e214cf4" />
+    <Content Include="HSR-html\.git\objects\e3\dd03ea55169a301b639c999802ba1b03f29319" />
+    <Content Include="HSR-html\.git\objects\e3\e23f1c060041b4c6919991f8eaabc0934d5585" />
+    <Content Include="HSR-html\.git\objects\e4\b7d7ca41518953a930e541797ccf5fcb6349e4" />
+    <Content Include="HSR-html\.git\objects\e4\f3bef592e60c020ad738e8789b4297e1a33a04" />
+    <Content Include="HSR-html\.git\objects\e5\177d89140c0d572ea96b36b16cdc77cbd67f18" />
+    <Content Include="HSR-html\.git\objects\e5\9ea1622375e603d214baf31aaa625946e70812" />
+    <Content Include="HSR-html\.git\objects\e6\ca29aab3c2069fed63e9f410df5a9a071ce283" />
+    <Content Include="HSR-html\.git\objects\e7\ef7ea2464808cc5ab1fa2b9df53dee0788a5f2" />
+    <Content Include="HSR-html\.git\objects\e8\4b046263fd68a72fab1f1039d36021433f7b63" />
+    <Content Include="HSR-html\.git\objects\e8\5290ae83f157b98ebbf1903f1ce5be65919e68" />
+    <Content Include="HSR-html\.git\objects\e9\2f18b568197555e16f219656de02316c541582" />
+    <Content Include="HSR-html\.git\objects\e9\62c48aea43fef081fa232506118471fd891a78" />
+    <Content Include="HSR-html\.git\objects\ea\5381c2ab72f191459fc6275dc202e5ba1075e2" />
+    <Content Include="HSR-html\.git\objects\ee\d8052d6157a382cc6443abb107e9ebd4582abb" />
+    <Content Include="HSR-html\.git\objects\ef\d1799917c47e5d659da7fd8608a52aff3c13a9" />
+    <Content Include="HSR-html\.git\objects\f0\ced11ec6784aa67a21ca8830aa2eef5e53d8a0" />
+    <Content Include="HSR-html\.git\objects\f1\98d2e6e56306e694730845fbe83564e899561c" />
+    <Content Include="HSR-html\.git\objects\f1\d497eb53d1b3205d1d1120c5cf8f73498dd697" />
+    <Content Include="HSR-html\.git\objects\f3\029521d15e245064d409e471b9eb2311a541e4" />
+    <Content Include="HSR-html\.git\objects\f6\7943b0978ba199e92a6f2d4bd540ab7bd52bca" />
+    <Content Include="HSR-html\.git\objects\f9\11fdc4235d62cc0676b9b42b178cf69fabe050" />
+    <Content Include="HSR-html\.git\objects\f9\817c053bc39cff4500385aaf6bbbc4c21a39a1" />
+    <Content Include="HSR-html\.git\objects\f9\819925d4c7149354f047ab581ec233089c7079" />
+    <Content Include="HSR-html\.git\objects\f9\9ca973d959a1bd32ed04676751b0f537b75d4d" />
+    <Content Include="HSR-html\.git\objects\fa\ab22c447977332db59e80aea34a5115a0d75ed" />
+    <Content Include="HSR-html\.git\objects\fa\d1d42d66cb5979d7c2e1b654a6f3266d83b8b9" />
+    <Content Include="HSR-html\.git\objects\fa\f9d116e4787a56c8ee415e0369cdb616c91583" />
+    <Content Include="HSR-html\.git\objects\fb\36e885dd675064344e5362e0ce30d6169ef3d3" />
+    <Content Include="HSR-html\.git\objects\fb\bd45d9649f4db179b1a03a127d243324df25cb" />
+    <Content Include="HSR-html\.git\objects\fb\cbac37a428b3a3790ec966c7aa7f31bae75054" />
+    <Content Include="HSR-html\.git\objects\fe\c512445da2a8bc9ba58f8affdc335b54ec78f0" />
+    <Content Include="HSR-html\.git\objects\ff\ebbdb9c4f3ad9152110f8b85ad613e01456fb7" />
+    <Content Include="HSR-html\.git\objects\pack\pack-0598c7f049a8ccf1db6340fe1839e01ed0004f82.idx" />
+    <Content Include="HSR-html\.git\objects\pack\pack-0598c7f049a8ccf1db6340fe1839e01ed0004f82.pack" />
+    <Content Include="HSR-html\.git\ORIG_HEAD" />
+    <Content Include="HSR-html\.git\packed-refs" />
+    <Content Include="HSR-html\.git\refs\heads\Sprint01" />
+    <Content Include="HSR-html\.git\refs\remotes\origin\HEAD" />
+    <Content Include="HSR-html\.git\refs\remotes\origin\master" />
+    <Content Include="HSR-html\.git\refs\remotes\origin\Sprint01" />
+    <Content Include="HSR-html\.git\sourcetreeconfig" />
+    <Content Include="HSR-html\.git\sourcetreeconfig-TEO-SNauman" />
+    <Content Include="HSR-html\.git\sourcetreeconfig-TEO-SNauman-2" />
+    <Content Include="HSR-html\css\bootstrap-grid.css.map" />
+    <Content Include="HSR-html\css\bootstrap-grid.min.css.map" />
+    <Content Include="HSR-html\css\bootstrap-reboot.css.map" />
+    <Content Include="HSR-html\css\bootstrap-reboot.min.css.map" />
+    <Content Include="HSR-html\css\bootstrap.css.map" />
+    <Content Include="HSR-html\css\bootstrap.min.css.map" />
+    <Content Include="HSR-html\css\font-awesome.css.map" />
+    <Content Include="HSR-html\fonts\fontawesome-webfont.eot" />
+    <Content Include="HSR-html\fonts\fontawesome-webfont.ttf" />
+    <Content Include="HSR-html\fonts\fontawesome-webfont.woff" />
+    <Content Include="HSR-html\fonts\fontawesome-webfont.woff2" />
+    <Content Include="HSR-html\fonts\FontAwesome.otf" />
+    <Content Include="HSR-html\fonts\Ubuntu-Bold.ttf" />
+    <Content Include="HSR-html\fonts\Ubuntu-BoldItalic.ttf" />
+    <Content Include="HSR-html\fonts\Ubuntu-Italic.ttf" />
+    <Content Include="HSR-html\fonts\Ubuntu-Light.ttf" />
+    <Content Include="HSR-html\fonts\Ubuntu-LightItalic.ttf" />
+    <Content Include="HSR-html\fonts\Ubuntu-Medium.ttf" />
+    <Content Include="HSR-html\fonts\Ubuntu-MediumItalic.ttf" />
+    <Content Include="HSR-html\fonts\Ubuntu-Regular.ttf" />
+    <Content Include="HSR-html\js\bootstrap.bundle.js.map" />
+    <Content Include="HSR-html\js\bootstrap.bundle.min.js.map" />
+    <Content Include="HSR-html\js\bootstrap.js.map" />
+    <Content Include="HSR-html\js\bootstrap.min.js.map" />
+    <Content Include="HSR-html\js\jquery.min.map" />
+    <Content Include="HSR-html\js\jquery.slim.min.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\font-awesome.css.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\Ubuntu-Bold.ttf" />
+    <Content Include="fonts\Ubuntu-BoldItalic.ttf" />
+    <Content Include="fonts\Ubuntu-Italic.ttf" />
+    <Content Include="fonts\Ubuntu-Light.ttf" />
+    <Content Include="fonts\Ubuntu-LightItalic.ttf" />
+    <Content Include="fonts\Ubuntu-Medium.ttf" />
+    <Content Include="fonts\Ubuntu-MediumItalic.ttf" />
+    <Content Include="fonts\Ubuntu-Regular.ttf" />
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\html5shiv.min.js" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery.min.map" />
+    <Content Include="Scripts\jquery.slim.min.map" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.slim.js" />
+    <Content Include="Scripts\jquery.slim.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="HSR-html\.git\objects\info\" />
+    <Folder Include="HSR-html\.git\refs\tags\" />
+    <Folder Include="Views\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logixion.Domain.Entities\Logixion.Domain.Entities.csproj">
+      <Project>{78ef2d38-1cf5-4964-81d9-7476c19dc5bc}</Project>
+      <Name>Logixion.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logixion.Infrastructure.DependencyInjection\Logixion.Infrastructure.DependencyInjection.csproj">
+      <Project>{b033ec78-e6d4-4ed1-99aa-3576f8690052}</Project>
+      <Name>Logixion.Infrastructure.DependencyInjection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logixion.Infrastructure.Utilities\Logixion.Infrastructure.Utilities.csproj">
+      <Project>{5785ac08-3dfb-4e47-a019-983c28932fcd}</Project>
+      <Name>Logixion.Infrastructure.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logixion.Services.IService\Logixion.Services.IService.csproj">
+      <Project>{4908280f-d5a2-4fdd-852c-a11b447ff057}</Project>
+      <Name>Logixion.Services.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logixion.Services.Models\Logixion.Services.Models.csproj">
+      <Project>{3b2fb876-968d-4baf-baf2-41b9a7192de7}</Project>
+      <Name>Logixion.Services.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logixion.Web.Security\Logixion.Web.Security.csproj">
+      <Project>{971a1785-ea4d-497f-b930-5535ac4de884}</Project>
+      <Name>Logixion.Web.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9196</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9196/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

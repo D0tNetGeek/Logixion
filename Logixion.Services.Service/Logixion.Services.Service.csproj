@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD2BF087-C180-40AC-90FE-6D5B1ADD6060}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Logixion.Services.Service</RootNamespace>
+    <AssemblyName>Logixion.Services.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mapping\AutoMapperConfig.cs" />
+    <Compile Include="UserDetailService.cs" />
+    <Compile Include="EmployeeService.cs" />
+    <Compile Include="GenericService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logixion.Domain.Entities\Logixion.Domain.Entities.csproj">
+      <Project>{78ef2d38-1cf5-4964-81d9-7476c19dc5bc}</Project>
+      <Name>Logixion.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logixion.Domain.IRepository\Logixion.Domain.IRepository.csproj">
+      <Project>{1d0bb883-fc69-414c-9256-f7efc61592c7}</Project>
+      <Name>Logixion.Domain.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logixion.Infrastructure.Utilities\Logixion.Infrastructure.Utilities.csproj">
+      <Project>{5785ac08-3dfb-4e47-a019-983c28932fcd}</Project>
+      <Name>Logixion.Infrastructure.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logixion.Services.IService\Logixion.Services.IService.csproj">
+      <Project>{4908280f-d5a2-4fdd-852c-a11b447ff057}</Project>
+      <Name>Logixion.Services.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logixion.Services.Models\Logixion.Services.Models.csproj">
+      <Project>{3b2fb876-968d-4baf-baf2-41b9a7192de7}</Project>
+      <Name>Logixion.Services.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
